@@ -1,9 +1,8 @@
-import './App.css';
+import './App.css'
 import spaceship from './assets/Galaga_Fighter.png'
-import { useState } from 'react';
+import { useState } from 'react'
 function App() {
-
-  const [movement, setMovement] = useState("2px solid black");
+  const [movement, setMovement] = useState('2px solid black')
   // function handleKeyPress(e) {
   //   var key = e.key;
   //   console.log("You pressed a key: " + key);
@@ -14,9 +13,9 @@ function App() {
   //     console.log("you clicked right")
   //   }
   // }
-  const handleKeyDown = event => {
-    console.log('User pressed: ', event.key);
-  };
+  const handleKeyDown = (event) => {
+    console.log('User pressed: ', event.key)
+  }
 
   return (
     <div className="">
@@ -24,8 +23,9 @@ function App() {
         <img src={spaceship} />
       </div>
 
+      <div className="App" id="animatedBackground"></div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
