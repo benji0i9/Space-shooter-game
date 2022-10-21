@@ -1,6 +1,8 @@
-
-
-
+body,
+html {
+  width: 100vw;
+  overflow: hidden;
+}
 
 #animatedBackground {
   width: 100%;
@@ -8,11 +10,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: url('./assets/background.png');
+  background: url("./assets/background.png");
   background-repeat: repeat;
   background-position: 0 0;
   background-size: auto 100%;
-/*adjust s value for speed*/
+  /*adjust s value for speed*/
   animation: animatedBackground 500s linear infinite;
 }
 
@@ -20,8 +22,8 @@
   from {
     background-position: 0 0;
   }
-/*use negative width if you want it to flow right to left else and positive for left to right*/
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
   to {
-    background-position: 0 -10000px ;
+    background-position: 0 -10000px;
   }
 }
