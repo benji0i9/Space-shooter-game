@@ -19,11 +19,7 @@ export default function App() {
 
   // if space -> make the use effect 
   // get spaceship margin location to render the laser
-  const para = document.createElement("img");
-  para.src = missile
-  const space = document.getElementById("spaceshipdiv")
-  
-  space.appendChild(para);
+
 
 
   
@@ -102,7 +98,9 @@ export default function App() {
 
       <div className="App" id="animatedBackground">
         <div>
+          
           <Timer />
+          <img className='missileImage' src={missile} />
           <img
             id='spaceshipdiv'
             alt="Spaceship"

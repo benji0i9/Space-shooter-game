@@ -29,3 +29,22 @@ Countdown {
     background-position: 0 -10000px;
   }
 }
+
+
+.missileImage {
+  animation: missileAnim 2s linear ;
+
+  width: 100px;
+  position:initial;
+
+  
+}
+
+@keyframes missileAnim {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}
