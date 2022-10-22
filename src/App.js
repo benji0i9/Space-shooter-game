@@ -7,6 +7,7 @@ export default (App) => {
   useEffect(() => {
     function handleKeyDown(e) {
       console.log(e.keyCode);
+      //Left Arrow Key
       if (e.keyCode === 37) {
         console.log("Left");
         if (marginLeft > 0) {
@@ -14,6 +15,7 @@ export default (App) => {
         } else {
           setMarginLeft(0);
         }
+        //Right Arrow Key
       } else if (e.keyCode === 39) {
         console.log("Right");
         if (marginLeft < window.outerWidth - 75) {
@@ -22,6 +24,10 @@ export default (App) => {
           const value = window.outerWidth - 75;
           setMarginLeft(value);
         }
+      }
+      // Spacebar
+      if (e.keyCode === 32) {
+        console.log("Spacebar!");
       }
     }
 
