@@ -4,10 +4,19 @@ import React, { useEffect, useState } from "react";
 function SpaceShip() {
     const [marginLeft, setMarginLeft] = useState(0);
     useEffect(() => {
+      let img = new Image();
       function handleKeyDown(e) {
         console.log(e.keyCode);
         //Left Arrow Key
-        if (e.keyCode === 37) {
+        if (e.keyCode === 32) {
+          console.log("Spacebar!");
+          img.src = missle;
+          img.width = 50;
+          img.height = 50;
+          img.marginLeft = marginLeft;
+          document.getElementById("Body").appendChild(img);
+        }
+        else if (e.keyCode === 37) {
           console.log("Left");
           if (marginLeft > 0) {
             setMarginLeft(marginLeft - 75);
@@ -24,11 +33,11 @@ function SpaceShip() {
             setMarginLeft(value);
           }
         }
-        // Spacebar
-        if (e.keyCode === 32) {
-          console.log("Spacebar!");
+  
         }
-      }
+
+
+  
   
       document.addEventListener("keydown", handleKeyDown);
   
