@@ -29,9 +29,9 @@ function SpaceShip() {
           console.log("Spacebar!");
         }
       }
-
+  
       document.addEventListener("keydown", handleKeyDown);
-
+  
       // Don't forget to clean up
       return function cleanup() {
         document.removeEventListener("keydown", handleKeyDown);
@@ -45,11 +45,13 @@ return(
             alt="Spaceship"
             src={spaceship}
             style={{
-                marginLeft: marginLeft,
-                width: 75,
-                alignSelf: "center",
-                flex: 1,
-                marginTop: window.outerHeight / 2,
+              marginLeft: marginLeft,
+              width: 75,
+              borderWidth: 1,
+              borderStyle: "solid",
+              borderColor: "white",
+              marginTop: window.outerHeight / 2,
+              flex: 1,
             }}
           />
     </div>
