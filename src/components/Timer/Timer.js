@@ -14,11 +14,19 @@ function Timer() {
             return <Completionist />;
         } else {
             // Render a fixed seconds
-            return (
-                <span style={{ color: "white", fontSize: 30, }}>
+            if (seconds < 10) {
+                return (
+                  <span style={{ color: "white", fontSize: 30 }}>
+                    {minutes}:0{seconds}
+                  </span>
+                );
+              } else {
+                return (
+                  <span style={{ color: "white", fontSize: 30 }}>
                     {minutes}:{seconds}
-                </span>
-            );
+                  </span>
+                );
+              }
         }
     }
     return (
