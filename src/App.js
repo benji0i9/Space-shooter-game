@@ -1,13 +1,30 @@
 
 import './App.css'
 import spaceship from './assets/Galaga_Fighter.png'
+import missile from './assets/1200px-M-20_missile.svg.png'
+
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import Timer from "./components/Timer";
+import Countdown from 'react-countdown';
+import ReactDOM from 'react-dom';
+
 
 
 
 export default function App() {
   const [movement, setMovement] = useState('2px solid black')
+
+  // image that holds image true or false
+
+  // if space -> make the use effect 
+  // get spaceship margin location to render the laser
+  const para = document.createElement("img");
+  para.src = missile
+  const space = document.getElementById("spaceshipdiv")
+  
+  space.appendChild(para);
+
 
   
 
@@ -30,9 +47,16 @@ export default function App() {
   useEffect(() => {
     function handleKeyDown(e) {
       console.log(e.keyCode);
-      if (e.keyCode == 37) {
-        console.log("1");
-      } else if (e.keyCode == 39) {
+      //Left Arrow Key
+      if (e.keyCode === 37) {
+        console.log("Left");
+        if (marginLeft > 0) {
+          setMarginLeft(marginLeft - 75);
+        } else {
+          setMarginLeft(0);
+        }
+        //Right Arrow Key
+      } else if (e.keyCode === 39) {
         console.log("Right");
         if (marginLeft < window.outerWidth - 75) {
           setMarginLeft(marginLeft + 75);
@@ -40,6 +64,10 @@ export default function App() {
           const value = window.outerWidth - 75;
           setMarginLeft(value);
         }
+      }
+      // Spacebar
+      if (e.keyCode === 32) {
+        console.log("Spacebar!");
       }
     }
 
@@ -50,22 +78,34 @@ export default function App() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [marginLeft]);
+  console.log(marginLeft);
   console.log(window.innerWidth);
 
 
+
   
+
+  // ReactDOM.render(
+  //   <Countdown date={Date.now() + 10000} />,
+  //   document.getElementById('animatedBackground')
+  //   );
+
   return (
     
 
       
 
       <div className="App" id="animatedBackground">
+        
         <div tabIndex={0} onKeyDown={handleKeyDown}>
           <img src={spaceship} />
 
       <div className="App" id="animatedBackground">
         <div>
+          <Timer />
           <img
+            id='spaceshipdiv'
+            alt="Spaceship"
             src={spaceship}
             style={{
               marginLeft: marginLeft,
@@ -73,6 +113,7 @@ export default function App() {
               borderWidth: 1,
               borderStyle: "solid",
               borderColor: "white",
+              marginTop: window.outerHeight / 2,
             }}
           />
 
