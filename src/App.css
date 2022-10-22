@@ -30,11 +30,11 @@ Countdown {
   }
 }
 
+
 .missileImage {
   animation: missileAnim 2s linear ;
-
+  
   width: 100px;
-  position:initial;
 
 
 }

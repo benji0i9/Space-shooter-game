@@ -10,10 +10,10 @@ export default function Missile(props) {
   /**
    * This handles the y movement of the all the missiles
    */
-  useEffect(() => {
+   useEffect(() => {
     setTimeout(() => {
-      setBottom(bottom + 5);
-    }, 1000);
+      setBottom(bottom + 3);
+    }, 1);
   }, [bottom]);
 
   return (
