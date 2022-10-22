@@ -33,11 +33,10 @@ Countdown {
 
 .missileImage {
   animation: missileAnim 2s linear ;
-
-  width: 100px;
-  position:initial;
-
   
+  width: 100px;
+
+
 }
 
 @keyframes missileAnim {

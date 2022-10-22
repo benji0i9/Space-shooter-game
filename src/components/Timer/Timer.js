@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Countdown from 'react-countdown';
-import "../App.css";
+import "../../App.css";
+import { useEffect } from 'react'
 
 function Timer() {
     //onComplete
@@ -11,18 +12,11 @@ function Timer() {
         if (completed) {
             // Render a complete state
             return <Completionist />;
-        } else if ({seconds} >= 9){
-            // Render a countdown
-            return (
-                <span style={{ color: "white", fontSize: 30, }}>
-                    {minutes}:0{seconds}
-                </span>
-            );
-        } else{
+        } else {
             // Render a fixed seconds
             return (
                 <span style={{ color: "white", fontSize: 30, }}>
-                    {minutes}:0{seconds}
+                    {minutes}:{seconds}
                 </span>
             );
         }
@@ -32,7 +26,7 @@ function Timer() {
             <Countdown renderer={renderer} date={Date.now() + 500000} />,
         </div>
     );
-    
+
 };
 
 
