@@ -7,9 +7,16 @@ export default (App) => {
   useEffect(() => {
     function handleKeyDown(e) {
       console.log(e.keyCode);
-      if (e.keyCode == 37) {
-        console.log("1");
-      } else if (e.keyCode == 39) {
+      //Left Arrow Key
+      if (e.keyCode === 37) {
+        console.log("Left");
+        if (marginLeft > 0) {
+          setMarginLeft(marginLeft - 75);
+        } else {
+          setMarginLeft(0);
+        }
+        //Right Arrow Key
+      } else if (e.keyCode === 39) {
         console.log("Right");
         if (marginLeft < window.outerWidth - 75) {
           setMarginLeft(marginLeft + 75);
@@ -17,6 +24,10 @@ export default (App) => {
           const value = window.outerWidth - 75;
           setMarginLeft(value);
         }
+      }
+      // Spacebar
+      if (e.keyCode === 32) {
+        console.log("Spacebar!");
       }
     }
 
@@ -27,12 +38,14 @@ export default (App) => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [marginLeft]);
+  console.log(marginLeft);
   console.log(window.innerWidth);
   return (
     <div className="">
       <div className="App" id="animatedBackground">
         <div>
           <img
+            alt="Spaceship"
             src={spaceship}
             style={{
               marginLeft: marginLeft,
@@ -40,6 +53,7 @@ export default (App) => {
               borderWidth: 1,
               borderStyle: "solid",
               borderColor: "white",
+              marginTop: window.outerHeight / 2,
             }}
           />
         </div>
