@@ -1,6 +1,6 @@
 import "./App.css";
-import Timer from './components/Timer'
-import SpaceShip from "./components/SpaceShip";
+import Timer from './components/Timer/Timer'
+import SpaceShip from './components/SpaceShip/SpaceShip'
 
 export default (App) => {
   return (

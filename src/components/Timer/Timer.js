@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Countdown from 'react-countdown';
-import "../App.css";
+import "../../App.css";
 import { useEffect } from 'react'
 
 function Timer() {
