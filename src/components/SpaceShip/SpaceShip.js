@@ -13,6 +13,7 @@ function SpaceShip() {
         if (e.keyCode === 32) {
           console.log("Spacebar!");
           img.src = missile;
+          img.classList.add('missileImage')
           img.width = 50;
           img.height = 50;
           img.marginLeft = marginLeft;
