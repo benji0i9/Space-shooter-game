@@ -1,6 +1,10 @@
 import "./App.css";
 import spaceship from "./assets/Galaga_Fighter.png";
 import React, { useEffect, useState } from "react";
+import Timer from "./components/Timer";
+import Countdown from 'react-countdown';
+import ReactDOM from 'react-dom';
+
 
 export default (App) => {
   const [marginLeft, setMarginLeft] = useState(0);
@@ -40,10 +44,16 @@ export default (App) => {
   }, [marginLeft]);
   console.log(marginLeft);
   console.log(window.innerWidth);
+
+  // ReactDOM.render(
+  //   <Countdown date={Date.now() + 10000} />,
+  //   document.getElementById('animatedBackground')
+  //   );
   return (
     <div className="">
       <div className="App" id="animatedBackground">
         <div>
+          <Timer />
           <img
             alt="Spaceship"
             src={spaceship}

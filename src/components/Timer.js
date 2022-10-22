@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Countdown from 'react-countdown';
-
+import "../App.css";
 
 function Timer() {
     
-    ReactDOM.render(
-        <Countdown date={Date.now() + 10000} />,
-        document.getElementById('root')
-        );
-    
     return (
-        <div>
-            
+        <div id="countdown">
+           <Countdown style={{color: "#ffffff",}} date={Date.now() + 10000} />,
         </div>
     );
 }
