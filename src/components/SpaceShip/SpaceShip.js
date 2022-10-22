@@ -1,5 +1,7 @@
-import spaceship from '../assets/spaceship.png'
+import spaceship from '../../assets/spaceship.png'
+import missile from '../../assets/missile.png'
 import React, { useEffect, useState } from "react";
+import ReactDOM  from 'react-dom';
 
 function SpaceShip() {
     const [marginLeft, setMarginLeft] = useState(0);
@@ -10,7 +12,7 @@ function SpaceShip() {
         //Left Arrow Key
         if (e.keyCode === 32) {
           console.log("Spacebar!");
-          img.src = missle;
+          img.src = missile;
           img.width = 50;
           img.height = 50;
           img.marginLeft = marginLeft;
@@ -49,7 +51,7 @@ function SpaceShip() {
     console.log(marginLeft);
     console.log(window.innerWidth);
 return(
-    <div>
+    <div id='Body'>
         <img
             alt="Spaceship"
             src={spaceship}
