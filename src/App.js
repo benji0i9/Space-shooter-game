@@ -47,6 +47,7 @@ export default (App) => {
               borderWidth: 1,
               borderStyle: "solid",
               borderColor: "white",
+              marginTop: window.outerHeight / 2,
             }}
           />
         </div>
