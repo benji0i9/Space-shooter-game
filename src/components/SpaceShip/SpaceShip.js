@@ -31,7 +31,7 @@ function SpaceShip() {
         // document.getElementById("Body").appendChild(img);
       } else if (e.keyCode === 37) {
         console.log("Left");
-        if (marginLeft > 0) {
+        if (marginLeft > 0 + 100) {
           setMarginLeft(marginLeft - 75);
         } else {
           setMarginLeft(0);
@@ -39,7 +39,7 @@ function SpaceShip() {
         //Right Arrow Key
       } else if (e.keyCode === 39) {
         console.log("Right");
-        if (marginLeft < window.outerWidth - 75) {
+        if (marginLeft < window.outerWidth - 90) {
           setMarginLeft(marginLeft + 75);
         } else {
           const value = window.outerWidth - 75;
@@ -66,9 +66,6 @@ function SpaceShip() {
         style={{
           left: marginLeft,
           width: 75,
-          borderWidth: 1,
-          borderStyle: "solid",
-          borderColor: "white",
           bottom: 300,
           flex: 1,
           position: 'absolute'
