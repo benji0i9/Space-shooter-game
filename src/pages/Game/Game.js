@@ -2,8 +2,12 @@ import "../../App.css";
 import React, { useState } from "react";
 import Timer from "../../components/Timer/Timer";
 import SpaceShip from "../../components/SpaceShip/SpaceShip";
+import useAllHighScores from "../../hooks/useAllHighScores";
 
 export default function Game() {
+  const { allScores } = useAllHighScores();
+
+  console.log(allScores)
   const [movement, setMovement] = useState("2px solid black");
 
   // let img = new Image();
