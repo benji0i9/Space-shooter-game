@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
+import deleteHighScore from "../api/deleteHighScore";
 import getHighScores from "../api/getHighScores";
 
 /**
  * React hook that fetchs the data from server
- * @returns 
+ * @returns
  */
 export default function useAllHighScores() {
   const [allScores, setAllScores] = useState([]);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   // only run once
   useEffect(() => {
-    console.log('test')
+    console.log("test");
     /**
      * Fetch all score data
      */
@@ -29,7 +31,23 @@ export default function useAllHighScores() {
     fetchData();
   }, []);
 
+  // makes api req to delete
+  const deleteScore = async (id) => {
+    try {
+      setIsDeleting(true);
+      await deleteHighScore(id);
+      setAllScores(allScores.filter((score) => score._id !== id));
+      console.log("success, we delete the score");
+      setIsDeleting(false);
+    } catch (e) {
+      console.log(e);
+      setIsDeleting(false);
+    }
+  };
+
   return {
     allScores,
+    deleteScore,
+    isDeleting,
   };
 }
